@@ -1,0 +1,35 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+  jwt:
+    secret: ${JWT_SECRET}
+  datasource:
+    url: ${DATASOURCE_URL}
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none # create, update, none
+      show-sql: true
+
+kakao:
+  iss: ${KAKAO_ISS}
+  client-id: ${KAKAO_CLIENT_ID} # rest api Key
+  client-secret: ${KAKAO_CLIENT_SECRET}
+  redirect-url: ${KAKAO_REDIRECT_URL}
+  content-type: application/x-www-form-urlencoded;charset=utf-8
+
+redis:
+  host: ${REDIS_HOST}
+  port: ${REDIS_PORT}
+  password: ${REDIS_PASSWORD:}
+
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+    soohyunj:
+      interviewsimulator: DEBUG

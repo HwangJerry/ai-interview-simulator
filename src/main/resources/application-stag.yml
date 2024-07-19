@@ -1,0 +1,37 @@
+spring:
+  config:
+    activate:
+      on-profile: stag
+  jwt:
+    secret: ${JWT_SECRET:bqkflsmdoawkrjgtphzivcxneyuablmopqrstuvwxyzhijklmnopqrstuvmwxfgab}
+
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:mysql://database-1.cmd9baoe4fpc.ap-northeast-2.rds.amazonaws.com:3306/interview_simulator}
+    username: root
+    password: ssafyssafy
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+      show-sql: true
+logging:
+  level:
+    org:
+      springframework:
+        web: WARN
+    soohyunj:
+      interviewsimulator: WARN
+
+kakao:
+  iss: ${KAKAO_ISS:https://kauth.kakao.com}
+  client-id: ${KAKAO_CLIENT_ID:03072686150feaab2501e63e2183ff64} # rest api Key
+  client-secret: ${KAKAO_CLIENT_SECRET:dvXoHJW8JcqPRbgaRT0dts8oLVWuX2jO}
+#  redirect-url: ${KAKAO_REDIRECT_URL:http://ec2-13-125-147-142.ap-northeast-2.compute.amazonaws.com:8080/kakao/id-token}
+  redirect-url: ${KAKAO_REDIRECT_URL:https://main--illustrious-mooncake-3b9c7b.netlify.app/login}
+#  redirect-url: ${KAKAO_REDIRECT_URL:http://localhost:3000/login}
+  content-type: application/x-www-form-urlencoded;charset=utf-8
+
+redis:
+  host: ${REDIS_HOST:172.31.13.165}
+  port: ${REDIS_PORT:6379}
+  password: ${REDIS_PASSWORD:}

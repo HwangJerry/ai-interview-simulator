@@ -1,0 +1,31 @@
+spring.application.name: InterviewSimulator
+
+server:
+  tomcat:
+    threads:
+      min-spare: 50
+
+spring:
+  profiles:
+    active: dev
+
+jwt:
+  secret-key: ${JWT_SECRET}
+  access-token-exp: 864000000000000000
+  refresh-token-exp: 864000000000000000
+
+chatgpt:
+  api-key: ${CHATGPT_API_KEY}
+  model: ${CHATGPT_MODEL}
+  temperature: ${CHATGPT_TEMPERATURE}
+
+cloud:
+  aws:
+    s3:
+      bucket: ${S3_BUCKET}
+      region: ${S3_REGION}
+      access-key: ${S3_ACCESS_KEY}
+      secret-key: ${S3_SECRET_KEY}
+    stack:
+      auto: false # error-free choice for springboot project (at least for now)
+
